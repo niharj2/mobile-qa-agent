@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Screenshots & logs (keep folders, ignore contents)
+screenshots/*
+logs/*
+!screenshots/.gitkeep
+!logs/.gitkeep
+
+# OS junk
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
