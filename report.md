@@ -28,7 +28,6 @@ I found that Google ADK is optimized for building Gemini-centric agents that res
 ---
 
 ## Why LangGraph
-
 I selected LangGraph because it is built for multi-agent reasoning workflows and maps naturally onto the required architecture.
 
 Key reasons for choosing LangGraph:
