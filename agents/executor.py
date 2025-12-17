@@ -1,5 +1,6 @@
 from tools.adb import adb_devices, tap, type_text, keyevent, swipe, launch_app
 from tools.screenshot import take_screenshot, images_different
+import time
 
 def executor(state):
     if "emulator" not in adb_devices():
@@ -54,6 +55,9 @@ def executor(state):
                 "ui_changed": False
             }
         }
+
+    # Wait for WebView to render changes after action
+    time.sleep(2)
 
     after = take_screenshot("after")
     changed = images_different(before, after)

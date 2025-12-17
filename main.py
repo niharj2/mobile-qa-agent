@@ -1,4 +1,6 @@
 from graph.workflow import build_graph
+from tools.adb import launch_app
+import time
 
 TESTS = [
     ("Open Obsidian, create a new Vault named 'InternVault', and enter the vault.", "pass"),
@@ -11,6 +13,10 @@ if __name__ == "__main__":
     graph = build_graph()
 
     for t, expected in TESTS:
+        # Force launch Obsidian before each test
+        launch_app()
+        time.sleep(5)  # Wait longer for WebView to fully render
+
         state = {
             "test_case": t,
             "plan": None,

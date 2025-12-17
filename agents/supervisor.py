@@ -54,7 +54,8 @@ def supervisor(state):
         no_change_count = state.get("no_change_count", 0) + 1
 
         # If too many consecutive no-change steps, fail fast
-        if no_change_count >= 3:
+        # Increased threshold to handle onboarding/modal flows
+        if no_change_count >= 5:
             return {
                 "verdict": "fail",
                 "failure_type": "execution_failure",
